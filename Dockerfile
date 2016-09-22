@@ -10,10 +10,4 @@ RUN bin/plugin install shield
 # Add specific role
 COPY roles.yml /usr/share/elasticsearch/config/shield/
 
-ENV LOGSTASH_PWD logstash
-ENV KIBANA_PWD kibana
-ENV KIBANA_USER_NAME kibana
-ENV KIBANA_USER_PWD kibana
-
-COPY es-entrypoint.sh /
-ENTRYPOINT ["/es-entrypoint.sh"]
+RUN bin/shield/esusers useradd es_admin -p es_admin -r admin

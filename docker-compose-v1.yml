@@ -8,10 +8,10 @@ elk:
     - "5044:5044"
     - "5000:5000"
   volumes:
-  - /mnt/docker/elk_1/logdata:/var/lib/elasticsearch
+  - /mnt/docker/elk/logdata:/var/lib/elasticsearch
   
 nginx:
-  image: daocloud.io/mybbcat/nginx
+  image: daocloud.io/mybbcat/nginx:laset
   ports:  
     - "80:80"
   restart: always

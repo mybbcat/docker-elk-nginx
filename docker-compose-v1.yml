@@ -11,7 +11,7 @@ elk:
   - /mnt/docker/elk_1/logdata:/var/lib/elasticsearch
   
 nginx:
-  build: ./nginx
+  image: daocloud.io/mybbcat/nginx
   ports:  
     - "80:80"
   restart: always

@@ -1,0 +1,17 @@
+
+elk:
+  image: sebp/elk:es234_l234_k453
+  restart: always
+  ports:
+    - "5601:5601"
+    - "9200:9200"
+    - "5044:5044"
+    - "5000:5000"
+  volumes:
+  - /mnt/docker/elk_1/logdata:/var/lib/elasticsearch
+  
+nginx:
+  build: ./nginx
+  ports:  
+    - "80:80"
+  restart: always
